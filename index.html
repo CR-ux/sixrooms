@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ⁿᵒᵗBorges — Six Rooms</title>
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --fg: #e7e5e4;
+      --muted: #a8a29e;
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: "Courier New", Courier, monospace;
+      line-height: 1.5;
+      background: var(--bg);
+      color: var(--fg);
+      text-rendering: optimizeLegibility;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 24px; }
+    header { padding: 64px 0 24px; text-align: center; }
+    header h1 {
+      margin: 0;
+      font-size: clamp(20px, 2.6vw + 10px, 42px);
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+    header h2 {
+      margin: 6px 0 0;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 400;
+      letter-spacing: 0.1em;
+    }
+    nav.links {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin: 36px auto 40px;
+      text-align: center;
+    }
+    .link {
+      text-decoration: none;
+      color: var(--fg);
+      font-size: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: color 160ms ease;
+    }
+    .link span {
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: var(--muted);
+    }
+    .link:hover { color: #fff; }
+    .bio { max-width: 760px; margin: 0 auto 80px; text-align: justify; text-align-last: center; }
+    .bio p { margin: 0; font-size: clamp(14px, 1.35vw + 8px, 18px); color: var(--fg); }
+    footer { color: var(--muted); font-size: 12px; text-align: center; padding: 32px 0 24px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>ⁿᵒᵗBorges</h1>
+      <h2>you are in a system of six rooms</h2>
+    </header>
+
+    <nav class="links" aria-label="Primary">
+      <a class="link" href="https://library.notborges.org" target="_blank" rel="noopener noreferrer">
+        <span>Library</span>♛
+      </a>
+      <a class="link" href="#" title="Add your artworks URL here">
+        <span>Gallery</span>♚
+      </a>
+      <a class="link" href="https://publish.obsidian.md/thechildrensgospelmusicsongbook/TWO.FOUR.GIVE." target="_blank" rel="noopener noreferrer">
+        <span>Chapel</span>♝
+      </a>
+      <a class="link" href="https://notborges.pages.dev" target="_blank" rel="noopener noreferrer">
+        <span>Study</span>♙
+      </a>
+      <a class="link" href="https://notborges.bandcamp.com" target="_blank" rel="noopener noreferrer">
+        <span>Oratory</span>♞
+      </a>
+      <a class="link" href="https://www.instagram.com/carpvs" target="_blank" rel="noopener noreferrer">
+        <span>Ingress</span>♜
+      </a>
+    </nav>
+
+    <section class="bio">
+      <p>
+        Callie Rose Petal''' (born 17 April 1994) is a Scottish conceptual performance artist, composer, software developer, and language artist whose work spans experimental literature, noise composition, and transmedia ritual. She is known for her work as a noise alchemist, blending experimental sound, ritual structure, and semiotics in an artifact-as-artefact approach—treating distortion and formal degradation as sites of meaning. Her sonic practice engages breakdown not as flaw, but as compositional force — paralleling her broader conceptual framework, in which loss, grief, and otherness emerge as structural generators of affect and form. Her work is often informed by her lived experience as a trans artist.
+      </p>
+    </section>
+
+    <footer>
+      &copy; <span id="y"></span> Callie Rose Petal
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
