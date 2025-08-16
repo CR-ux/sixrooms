@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>ⁿᵒᵗBorges — Six Rooms</title>
   <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#0a0a0a" />
@@ -11,56 +11,97 @@
       --bg: #0a0a0a;
       --fg: #e7e5e4;
       --muted: #a8a29e;
+      --focus: #d6d3d1;
     }
     html, body { height: 100%; }
     body {
       margin: 0;
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
       font-family: "Courier New", Courier, monospace;
       line-height: 1.5;
       background: var(--bg);
       color: var(--fg);
       text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     .wrap { max-width: 980px; margin: 0 auto; padding: 24px; }
-    header { padding: 64px 0 24px; text-align: center; }
+
+    header { padding: 48px 0 16px; text-align: center; }
     header h1 {
       margin: 0;
-      font-size: clamp(20px, 2.6vw + 10px, 42px);
+      font-size: clamp(22px, 5.5vw, 42px);
       letter-spacing: 0.08em;
       font-weight: 600;
     }
     header h2 {
       margin: 6px 0 0;
-      font-size: 14px;
+      font-size: clamp(11px, 2.6vw, 14px);
       color: var(--muted);
       font-weight: 400;
       letter-spacing: 0.1em;
+      text-transform: lowercase;
     }
+
     nav.links {
       display: flex;
-      justify-content: center;
-      gap: 48px;
-      margin: 36px auto 40px;
-      text-align: center;
+      align-items: flex-end;
+      gap: clamp(16px, 5vw, 48px);
+      margin: 24px auto 28px;
+      padding: 0 8px 8px;
+      max-width: 100%;
     }
+
+    /* Mobile: horizontal scroll, left aligned */
+    @media (max-width: 768px) {
+      nav.links {
+        justify-content: flex-start;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      nav.links::-webkit-scrollbar { display: none; }
+    }
+
+    /* Desktop: centered, no scroll */
+    @media (min-width: 769px) {
+      nav.links {
+        justify-content: center;
+        overflow-x: visible;
+      }
+    }
+
     .link {
       text-decoration: none;
       color: var(--fg);
-      font-size: 32px;
-      display: flex;
+      display: inline-flex;
       flex-direction: column;
       align-items: center;
-      transition: color 160ms ease;
+      justify-content: center;
+      min-width: 56px;
+      padding: 6px 2px;
+      outline: none;
     }
     .link span {
-      font-size: 14px;
-      margin-bottom: 6px;
+      font-size: clamp(11px, 2.6vw, 14px);
+      margin-bottom: 4px;
       color: var(--muted);
     }
-    .link:hover { color: #fff; }
-    .bio { max-width: 760px; margin: 0 auto 80px; text-align: justify; text-align-last: center; }
-    .bio p { margin: 0; font-size: clamp(14px, 1.35vw + 8px, 18px); color: var(--fg); }
-    footer { color: var(--muted); font-size: 12px; text-align: center; padding: 32px 0 24px; }
+    .icon { font-size: clamp(28px, 10vw, 40px); line-height: 1; }
+
+    .link:focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 6px; }
+    .link:hover { filter: brightness(1.08); }
+
+    .bio { max-width: 760px; margin: 8px auto 64px; text-align: justify; text-align-last: center; padding: 0 12px; }
+    .bio p { margin: 0; font-size: clamp(14px, 1.6vw + 8px, 18px); color: var(--fg); }
+
+    footer { color: var(--muted); font-size: 12px; text-align: center; padding: 24px 0 16px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .link:hover { filter: none; }
+      .link, nav.links { scroll-behavior: auto; }
+    }
   </style>
 </head>
 <body>
@@ -71,23 +112,23 @@
     </header>
 
     <nav class="links" aria-label="Primary">
-      <a class="link" href="https://library.notborges.org" target="_blank" rel="noopener noreferrer">
-        <span>Library</span>♛
+      <a class="link" href="https://library.notborges.org" target="_blank" rel="noopener noreferrer" aria-label="Library">
+        <span>Library</span><div class="icon" aria-hidden="true">♛</div>
       </a>
-      <a class="link" href="#" title="Add your artworks URL here">
-        <span>Gallery</span>♚
+      <a class="link" href="#" title="Add your artworks URL here" aria-label="Gallery">
+        <span>Gallery</span><div class="icon" aria-hidden="true">♚</div>
       </a>
-      <a class="link" href="https://publish.obsidian.md/thechildrensgospelmusicsongbook/TWO.FOUR.GIVE." target="_blank" rel="noopener noreferrer">
-        <span>Chapel</span>♝
+      <a class="link" href="https://publish.obsidian.md/thechildrensgospelmusicsongbook/TWO.FOUR.GIVE." target="_blank" rel="noopener noreferrer" aria-label="Chapel">
+        <span>Chapel</span><div class="icon" aria-hidden="true">♝</div>
       </a>
-      <a class="link" href="https://notborges.pages.dev" target="_blank" rel="noopener noreferrer">
-        <span>Study</span>♙
+      <a class="link" href="https://notborges.pages.dev" target="_blank" rel="noopener noreferrer" aria-label="Study">
+        <span>Study</span><div class="icon" aria-hidden="true">♙</div>
       </a>
-      <a class="link" href="https://notborges.bandcamp.com" target="_blank" rel="noopener noreferrer">
-        <span>Oratory</span>♞
+      <a class="link" href="https://notborges.bandcamp.com" target="_blank" rel="noopener noreferrer" aria-label="Oratory">
+        <span>Oratory</span><div class="icon" aria-hidden="true">♞</div>
       </a>
-      <a class="link" href="https://www.instagram.com/carpvs" target="_blank" rel="noopener noreferrer">
-        <span>Ingress</span>♜
+      <a class="link" href="https://www.instagram.com/carpvs" target="_blank" rel="noopener noreferrer" aria-label="Ingress">
+        <span>Ingress</span><div class="icon" aria-hidden="true">♜</div>
       </a>
     </nav>
 
