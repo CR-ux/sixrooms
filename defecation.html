@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title><i>Grimoire I: Ingestion</i></title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0b0b0b;
+    --paper:#0a0a0a;           /* near-black background */
+    --blood:#4a0d16;           /* deep burgundy */
+    --ash:#d3d3d3;             /* light grey */
+    --veil:#121212;            /* banner black */
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:#e9e9e9;
+    font-family:"Courier Prime", "Courier New", Courier, monospace;
+    line-height:1.45;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  .page{ max-width:940px; margin:0 auto; padding:0 18px 48px }
+
+  .banner{
+    background:linear-gradient(180deg, var(--veil), #000);
+    color:#eee;
+    border-bottom:1px solid var(--blood);
+    padding:10px 0 8px;
+    position:sticky; top:0; z-index:1;
+  }
+  .title{
+    letter-spacing:.18em;
+    text-transform:lowercase;
+    font-weight:700;
+    font-size: clamp(28px, 6vw, 56px);
+  }
+  .subtitle{ font-size:12px; letter-spacing:.2em; text-transform:uppercase; opacity:.8 }
+  .meta{ margin-top:6px; font-size:12px; opacity:.9 }
+  .meta a{ color:#e9e9e9; text-decoration:none; border-bottom:1px solid rgba(233,233,233,.25) }
+  .meta a:hover{ border-color: var(--blood) }
+
+  .sheet{ margin: 22px auto 0; }
+  .hero-img{ width:100%; height:320px; display:flex; align-items:center; justify-content:center; color:#666; font-size:12px; letter-spacing:.12em; margin:10px 0 18px }
+  .rule{ height:1px; background:linear-gradient(90deg, transparent, var(--blood), transparent); margin: 12px 0 14px }
+  p{ margin:0 0 10px; font-size:15px; color:#e6e6e6 }
+  em, i { color:#f0f0f0 }
+
+  h2{ margin:20px 0 10px; font-size:14px; letter-spacing:.18em; text-transform:uppercase; color:#e9e9e9 }
+  ul{ margin:0 0 14px 20px; padding:0; }
+  li{ margin-bottom:6px; }
+  a{ color:#cb0808; text-decoration:none; border-bottom:1px solid rgba(233,233,233,.25) }
+  @media print{
+    @page{ size:A4; margin: 12mm 14mm }
+    body{ background:#fff; color:#000 }
+    .banner{ background:#000; color:#fff; -webkit-print-color-adjust:exact; print-color-adjust:exact }
+    .hero-img{ border-color:#000; color:#000 }
+    .rule{ background:#5a0f1b }
+    .meta a{ color:#000; border-bottom:1px solid #000 }
+    p,h2,li{ color:#000 }
+  }
+</style>
+</head>
+<body>
+<header class="banner">
+  <div class="page">
+    <div class="title">Grimoire II: Defecation</div>
+    <div class="subtitle">The Return</div>
+    <div class="meta"><a href="gallery.html">back to gallery</a></div>
+  </div>
+</header>
+
+<main class="page sheet">
+  <div >
+    <img src="gallery/images/GRIMOIRES/stitch.png" style="max-width:100%; height:auto; display:block; margin:0 auto;">
+</div>
+  <div class="rule"></div>
+
+  <p>The second grimoire documenting Petal's return from psychiatric hospital and continued experience of hypergraphia, a trait which increases the intensity and volume of her creative output, while simultaneously exhausting and damaging her body, frequently resulting in knuckle dislocations, due to the fragility in her connective tissue from her disability, EDS. Like its partner, Defecation provides an uncomfortably intimate view of the artist's ongoing battles, with many pages painted in her own blood, burned, affixed with fallen leaves sourced from the grounds of the hospital, and stitched together. It is one hundred and six pages long. </p>
+  <img src="gallery/images/GRIMOIRES/back.png" style="max-width:100%; height:auto; display:block; margin:0 auto;">
+  <img src="gallery/images/GRIMOIRES/dig.png" style="max-width:100%; height:auto; display:block; margin:0 auto;">
+  <img src="gallery/images/GRIMOIRES/knot.png" style="max-width:100%; height:auto; display:block; margin:0 auto;">
+  <img src="gallery/images/GRIMOIRES/toGetHer.png" style="max-width:100%; height:auto; display:block; margin:0 auto;">
+
+  <div class="rule"></div>
+</main>
+</body>
+</html>
