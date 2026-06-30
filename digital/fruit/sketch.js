@@ -99,7 +99,6 @@ function createStartButton() {
     music.stop();
     music.play();
 
-    lastWordTime = millis();
     started = true;
 
     startButton.remove();
@@ -159,25 +158,33 @@ function revealNextWord() {
     return;
   }
 
-  if (
-    millis() - lastWordTime >=
-    millisecondsPerWord
-  ) {
+  const elapsedAudioMilliseconds =
+    music.currentTime() * 1000;
+
+  const targetWordCount = min(
+    words.length,
+    floor(
+      elapsedAudioMilliseconds /
+      millisecondsPerWord
+    ) + 1
+  );
+
+  while (currentWord < targetWordCount) {
     const position = findMaskPosition();
 
-    if (position !== null) {
-      visibleWords.push(
-        new WordFragment(
-          words[currentWord],
-          position.x,
-          position.y
-        )
-      );
-
-      currentWord++;
+    if (position === null) {
+      break;
     }
 
-    lastWordTime = millis();
+    visibleWords.push(
+      new WordFragment(
+        words[currentWord],
+        position.x,
+        position.y
+      )
+    );
+
+    currentWord++;
   }
 }
 
@@ -645,6 +652,5 @@ function restartPiece() {
   music.stop();
   music.play();
 
-  lastWordTime = millis();
   started = true;
 }
