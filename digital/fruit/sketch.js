@@ -76,7 +76,7 @@ function prepareMask() {
     For a website, a proportional crop may eventually be
     preferable, but this directly matches your Processing code.
   */
- // maskImage.resize(width, height);
+  maskImage.resize(width, height);
   maskImage.filter(GRAY);
   maskImage.loadPixels();
 }
