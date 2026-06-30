@@ -25,9 +25,9 @@ let overtoneSensitivity = 1.8;
 let peakSensitivity = 1.6;
 
 function preload() {
-  maskImage = loadImage("./tree_ref.png");
+  maskImage = loadImage("https://www.notborges.org/digital/fruit/tree_ref.png");
 
-  sourceLines = loadStrings("./fruit.txt.txt");
+  sourceLines = loadStrings("https://www.notborges.org/digital/fruit/fruit.txt.txt");
 
   music = loadSound(
     "https://media.notborges.org/Media/Audio/Exegesis_6.wav",
