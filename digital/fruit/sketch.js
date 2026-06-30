@@ -82,7 +82,7 @@ function prepareMask() {
 }
 
 function createStartButton() {
-  startButton = createButton("BEGIN");
+  startButton = createButton("EAT.");
 
   startButton.mousePressed(async () => {
     /*
