@@ -648,19 +648,3 @@ function restartPiece() {
   lastWordTime = millis();
   started = true;
 }
-
-function windowResized() {
-
-  resizeCanvas(windowWidth, windowHeight);
-
-  background(0);
-
-  if (maskImage) {
-
-    maskImage.resize(width, height);
-
-    maskImage.loadPixels();
-
-  }
-
-}
