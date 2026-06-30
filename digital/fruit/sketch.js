@@ -650,23 +650,17 @@ function restartPiece() {
 }
 
 function windowResized() {
-  /*
-    Resizing clears the canvas and rebuilds the mask.
-  */
-  resizeCanvas(
-    windowWidth,
-    windowHeight
-  );
+
+  resizeCanvas(windowWidth, windowHeight);
 
   background(0);
 
-  maskImage = loadImage(
-    "tree_ref.png",
-    () => {
-      prepareMask();
-      visibleWords = [];
-      currentWord = 0;
-      lastWordTime = millis();
-    }
-  );
+  if (maskImage) {
+
+    maskImage.resize(width, height);
+
+    maskImage.loadPixels();
+
+  }
+
 }
