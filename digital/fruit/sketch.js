@@ -25,9 +25,9 @@ let overtoneSensitivity = 1.8;
 let peakSensitivity = 1.6;
 
 function preload() {
-  maskImage = loadImage("tree_ref.png");
+  maskImage = loadImage("./tree_ref.png");
 
-  sourceLines = loadStrings("fruit.txt.txt");
+  sourceLines = loadStrings("./fruit.txt.txt");
 
   music = loadSound(
     "https://media.notborges.org/Media/Audio/Exegesis_6.wav",
@@ -661,7 +661,7 @@ function windowResized() {
   background(0);
 
   maskImage = loadImage(
-    "Callie_Rose_Petal.png",
+    "tree_ref.png",
     () => {
       prepareMask();
       visibleWords = [];
