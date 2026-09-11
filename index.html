@@ -66,17 +66,7 @@
       max-width: 100%;
     }
 
-    /* Mobile: horizontal scroll, left aligned */
-    @media (max-width: 768px) {
-      nav.links {
-        justify-content: flex-start;
-        overflow-x: auto;
-        overscroll-behavior-x: contain;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-      }
-      nav.links::-webkit-scrollbar { display: none; }
-    }
+
 
     /* Desktop: centered, no scroll */
     @media (min-width: 769px) {
@@ -130,7 +120,7 @@
     </section>
 
     <nav class="links" aria-label="Primary">
-      <a class="link" href="gallery.html" title="Add your artworks URL here" aria-label="Gallery">
+      <a class="link" href="gallery.html" title="gallery" aria-label="Gallery">
         <span>paintings</span>
       </a>
       <a class="link" href="https://notborges.pages.dev" target="_blank" rel="noopener noreferrer" aria-label="Study">
